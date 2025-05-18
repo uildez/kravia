@@ -5,7 +5,7 @@ export default function BlogSection({ posts }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full lg:w-3/4 rounded-lg mt-8 lg:mt-12">
       {posts.map(post => (
-        <Link href={`/posts/${post.slug.current}`} key={post._id}>
+        <Link href={`/posts/${post.slug.current}`} key={post._id} className="cursor-pointer">
           <div className="bg-white h-full rounded-[43px] border-1 border-gray-400/70 overflow-hidden hover:scale-[102%] hover:shadow-lg transition duration-500 group">
             <Image
               src={post.imagem.asset.url}
