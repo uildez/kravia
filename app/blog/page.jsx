@@ -69,8 +69,8 @@ export default async function BlogPage({ searchParams }) {
                                         key={page}
                                         href={`/posts?page=${page}`}
                                         className={`px-4 py-2 border rounded-xl ${page === currentPage
-                                            ? 'bg-purple-500 text-white'
-                                            : 'text-purple-600 hover:bg-purple-100'
+                                            ? 'bg-purple-light text-white'
+                                            : 'text-purple-light hover:bg-purple-dark'
                                             }`}
                                     >
                                         {page}
