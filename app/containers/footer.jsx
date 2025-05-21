@@ -11,10 +11,10 @@ export const Footer = () => {
         <Link href="tel:(11) 4786-2808" className="text-center lg:text-left text-white font-aeonik text-xl hover:-translate-y-1 transition-all duration-500">(11) 4786-2808</Link>
       </div>
       <div className='flex flex-row items-start gap-4'>
-        <a href='#'><Image src={"/images/instagram.svg"} className='max-w-[50px]' width={500} height={500} alt='Ícone Instagram' /></a>
-        <a href='#'><Image src={"/images/facebook.svg"} className='max-w-[50px]' width={500} height={500} alt='Ícone Facebook' /></a>
-        <a href='#'><Image src={"/images/linkedin.svg"} className='max-w-[50px]' width={500} height={500} alt='Ícone Linkedin' /></a>
-        <a href='#'><Image src={"/images/whatsapp.svg"} className='max-w-[50px]' width={500} height={500} alt='Ícone WhatsApp' /></a>
+        <a  target="_blank" rel="noopener noreferrer" href='#'><Image src={"/images/instagram.svg"} className='max-w-[50px]' width={500} height={500} alt='Ícone Instagram' /></a>
+        <a  target="_blank" rel="noopener noreferrer" href='#'><Image src={"/images/facebook.svg"} className='max-w-[50px]' width={500} height={500} alt='Ícone Facebook' /></a>
+        <a  target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/company/kravia-treinamentos/'><Image src={"/images/linkedin.svg"} className='max-w-[50px]' width={500} height={500} alt='Ícone Linkedin' /></a>
+        <a  target="_blank" rel="noopener noreferrer" href='#'><Image src={"/images/whatsapp.svg"} className='max-w-[50px]' width={500} height={500} alt='Ícone WhatsApp' /></a>
       </div>
     </div>
   )

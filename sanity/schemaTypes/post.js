@@ -5,7 +5,7 @@ export default {
   fields: [
     { name: 'title', type: 'string', title: 'Título' },
     { name: 'slug', type: 'slug', title: 'Slug', options: { source: 'title', maxLength: 96 } },
-    { name: 'body', type: 'text', title: 'Conteúdo' },
+    { name: 'body', type: 'array', title: 'Conteúdo', of: [{ type: 'block' }] },
     {
       name: 'imagem',
       type: 'image',
@@ -21,6 +21,25 @@ export default {
           description: 'Importante para SEO e acessibilidade'
         }
       ]
+    },
+    {
+      name: 'seoTitle',
+      type: 'string',
+      title: 'Título SEO',
+      description: 'Título para aparecer nos mecanismos de busca'
+    },
+    {
+      name: 'seoDescription',
+      type: 'text',
+      title: 'Descrição SEO',
+      description: 'Descrição curta para Google e redes sociais'
+    },
+    {
+      name: 'seoKeywords',
+      type: 'array',
+      title: 'TAGS Palavras-chave',
+      of: [{ type: 'string' }],
+      description: 'Palavras-chave relacionadas ao post'
     }
   ],
 }
