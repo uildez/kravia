@@ -56,7 +56,7 @@ export const TrainingCover = () => {
             <button
               key={company._id}
               onClick={() => handleSelectCompany(company)}
-              className="bg-[#d9d9d9] min-w-full lg:min-w-[300px] font-aeonik py-8 lg:px-10 lg:py-20 text-3xl lg:text-5xl font-bold text-[#333333] rounded-full hover:bg-[#b5b5b5] hover:scale-105 transition-all duration-500 cursor-pointer"
+              className="bg-[#f0f0f0] min-w-full lg:min-w-[300px] font-aeonik py-8 lg:px-10 lg:py-20 text-3xl lg:text-5xl font-bold text-[#333333] rounded-full hover:bg-[#b5b5b5] hover:scale-105 transition-all duration-500 cursor-pointer"
             >
               {company.nome}
             </button>

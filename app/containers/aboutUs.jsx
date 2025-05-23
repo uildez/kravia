@@ -2,7 +2,7 @@ import React from 'react'
 
 export const AboutUs = () => {
   return (
-    <div id='sobre-nos' className="flex flex-col-reverse lg:flex-row bg-[#d9d9d9] w-full items-start justify-center my-4">
+    <div id='sobre-nos' className="flex flex-col-reverse lg:flex-row bg-[#f0f0f0] w-full items-start justify-center my-4">
       <div className="flex flex-col justify-center h-auto gap-8 px-6 lg:pl-20 2xl:pl-40 lg:pr-32 py-12 lg:py-20 w-full lg:w-1/2">
         <span className="gradient-text uppercase text-xl font-grotesk tracking-[3px]">
           Sobre Nós
