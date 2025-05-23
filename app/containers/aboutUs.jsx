@@ -27,7 +27,7 @@ export const AboutUs = () => {
           muted
           loop
           playsInline
-          className="absolute top-0 left-0 w-[100%] h-[100%] object-cover"
+          className="absolute top-0 left-0 w-[100%] min-h-[100%] object-cover"
         >
           <source src="/video-sobre-min.mp4" type="video/mp4" />
           <track

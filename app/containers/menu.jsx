@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
 
 const itemVariants = {
@@ -28,6 +28,30 @@ const sideVariants = {
 
 export const Menu = () => {
   const [open, cycleOpen] = useCycle(false, true);
+    const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+
+      console.log("lastScrollY", lastScrollY)
+      console.log("currentScrollY", currentScrollY)
+      console.log(currentScrollY > lastScrollY)
+      console.log(showHeader)
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const links = [
     { name: "Inicio", to: "#", id: 1 },
@@ -38,8 +62,8 @@ export const Menu = () => {
   ];
 
   return (
-    <div className={`fixed w-full flex items-center justify-between h-[100px] z-30`}>
-      <div className='flex fixed top-0 flex-row w-full items-center justify-between gap-8 py-8 px-8 lg:px-20 2xl:px-40 bg-gradient-to-b from-white to-white/0 z-50'>
+    <div className={`fixed w-full z-30`}>
+      <div className={`flex fixed top-0 flex-row w-full items-center justify-between gap-8 py-8 px-8 lg:px-20 2xl:px-40 bg-gradient-to-b from-white to-white/0 z-50 ${showHeader ? 'translate-y-0' : '-translate-y-40'} transition-transform duration-500`}>
         <Link href={"/"}>
           <Image src={"/images/logo-kravia.svg"} className='max-w-[120px] lg:min-w-[150px]' width={500} height={500} alt='Logotipo Kravia' />
         </Link>
