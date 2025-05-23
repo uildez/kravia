@@ -92,7 +92,7 @@ export default async function CursoPage({ params }) {
                       <div className="flex flex-col gap-1 pl-4">
                         <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Localização:</strong> {item.localizacao}</p>
                         <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Carga horária:</strong> {item.cargaHoraria}</p>
-                        <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Investimento:</strong>R$ {item.investimento}</p>
+                        <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Investimento:</strong> R${item.investimento}</p>
                       </div>
                     </div>
                     <Link
