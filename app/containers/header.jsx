@@ -27,11 +27,12 @@ export const Header = () => {
           height="900"
           autoPlay
           muted
+          loop
           playsInline
           style={{ width: '100%', height: 'auto' }}
-          preload="none" className="min-w-full lg:min-h-screen lg:translate-x-72 translate-y-12 lg:-translate-y-20"
+          preload="none" className="min-w-[130%] lg:min-w-full lg:min-h-screen translate-y-8 lg:-translate-y-12 -translate-x-20 lg:translate-x-0"
         >
-          <source src="/capa-bg-kravia-min.mp4" type="video/mp4" />
+          <source src="/bg-novo-kravia-min.mp4" type="video/mp4" />
           <track
             src="/video-sobre-min.mp4"
             kind="subtitles"
