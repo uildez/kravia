@@ -41,7 +41,7 @@ export const Menu = () => {
     <div className={`fixed w-full flex items-center justify-between h-[100px] z-30`}>
       <div className='flex fixed top-0 flex-row w-full items-center justify-between gap-8 py-8 px-8 lg:px-20 2xl:px-40 bg-gradient-to-b from-white to-white/0 z-50'>
         <Link href={"/"}>
-          <Image src={"/images/logotipo-kravia-cores.webp"} className='max-w-[120px] lg:min-w-[150px]' width={500} height={500} alt='Logotipo Kravia' />
+          <Image src={"/images/logo-kravia.svg"} className='max-w-[120px] lg:min-w-[150px]' width={500} height={500} alt='Logotipo Kravia' />
         </Link>
         <div className='flex-row gap-12 hidden lg:flex z-50'>
           {links.map(({ name, to, id }) => (
