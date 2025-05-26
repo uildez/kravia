@@ -26,14 +26,17 @@ export default async function CursoPage({ params }) {
 
   return (
     <div>
-      {/* Imagem */}
-      <Image
-        src={urlFor(treinamento.imagem).width(1200).url()}
-        width={1200}
-        height={1200}
-        className="min-w-full h-[40vh] object-cover object-center bg-purple-light"
-        alt={treinamento.imagem?.alt || 'Imagem do treinamento'}
-      />
+      {treinamento.imagem ?
+        <Image
+          src={urlFor(treinamento.imagem).width(1200).url()}
+          width={1200}
+          height={1200}
+          className="min-w-full h-[40vh] object-cover object-center bg-purple-light"
+          alt={treinamento.imagem?.alt || 'Imagem do treinamento'}
+        />
+
+        : <div className="min-w-full h-[40vh] object-cover object-center bg-purple-light" />
+      }
 
       <div className="flex flex-col w-full mt-12 px-8 lg:px-20 2xl:px-40 min-h-[60vh] space-y-6">
         <div className="text-center space-y-2">
