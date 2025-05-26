@@ -40,12 +40,7 @@ export const Menu = () => {
       } else {
         setShowHeader(true);
       }
-
-      console.log("lastScrollY", lastScrollY)
-      console.log("currentScrollY", currentScrollY)
-      console.log(currentScrollY > lastScrollY)
-      console.log(showHeader)
-
+      
       setLastScrollY(currentScrollY);
     };
 
