@@ -31,7 +31,7 @@ export const TrainingCover = () => {
   if (step === 'intro') {
     return (
       <div className="flex flex-col w-full h-full items-center gap-8">
-        <h2 className='w-full lg:w-3/4 text-3xl lg:text-5xl font-aeonik font-bold text-center'>
+        <h2 className='w-full lg:w-3/4 text-[24px] lg:text-5xl font-aeonik font-bold text-center'>
           Confira as próximas turmas para os treinamentos <span className="gradient-text">CISCO, FORTINET e AWS</span> com instrutores certificados.
         </h2>
         <p className='w-full lg:w-2/4 text-center font-aeonik text-xl mb-8'>
@@ -56,7 +56,7 @@ export const TrainingCover = () => {
             <button
               key={company._id}
               onClick={() => handleSelectCompany(company)}
-              className="bg-[#f0f0f0] min-w-full lg:min-w-[300px] font-aeonik py-8 lg:px-10 lg:py-20 text-3xl lg:text-5xl font-bold text-[#333333] rounded-full hover:bg-[#b5b5b5] hover:scale-105 transition-all duration-500 cursor-pointer"
+              className="bg-[#DDDDDD] min-w-full lg:min-w-[300px] font-aeonik py-8 lg:px-10 lg:py-20 text-3xl lg:text-5xl font-bold text-[#333333] rounded-full hover:bg-[#b5b5b5] hover:scale-105 transition-all duration-500 cursor-pointer"
             >
               {company.nome}
             </button>
@@ -80,13 +80,13 @@ export const TrainingCover = () => {
           {courses.length > 0 ? 
           courses.map((course) => (
             <div key={course._id} className="flex justify-between items-center border-b py-4">
-              <span className="font-semibold text-[#333] text-lg lg:text-3xl font-aeonik">{course.title}</span>
+              <span className="font-semibold text-[#333] text-lg lg:text-3xl font-aeonik max-w-[50%] lg:max-w-auto">{course.title}</span>
               <button
                 onClick={() => router.push(`/treinamento/${course.slug.current}`)}
-                className="flex items-center justify-center font-aeonik gap-2 text-sm font-medium tracking-[3px] text-[#333]/80 hover:text-[#333] hover:scale-105 transition-all duration-500 cursor-pointer"
+                className="flex items-center text-right lg:text-center justify-center font-aeonik gap-2 text-sm font-medium tracking-[3px] text-[#333]/80 hover:text-[#333] hover:scale-105 transition-all duration-500 cursor-pointer"
               >
-                PRÓXIMAS TURMAS
-                <span className="flex items-center justify-center pl-1 pt-1 text-2xl pb-2 bg-[#333]/50 text-white h-[30px] w-[30px] rounded-full">▶</span>
+                PRÓXIMAS<br className='block lg:hidden'/> TURMAS
+                <span className="flex items-center justify-center pl-1 pt-[3px] lg:pt-1 text-2xl pb-2 bg-[#333]/50 text-white min-h-[30px] min-w-[30px] max-h-[30px] max-w-[30px] rounded-full">▶</span>
               </button>
             </div>
           )) : <h3 className="text-2xl lg:text-3xl font-bold font-aeonik text-center">Nenhum treinamento encontrado</h3>

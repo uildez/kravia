@@ -1,6 +1,6 @@
 import "./globals.css";
-import Head from "next/head";
 import LayoutWrapper from "./components/layoutWrapper";
+import Script from "next/script";
 
 export const metadata = {
   title: "Kravia | Treinamentos que moldam os profissionais",
@@ -19,6 +19,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt" className='scroll-smooth' style={{ scrollBehavior: 'smooth' }}>
+      <head>
+        {/* Google Analytics via gtag.js */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DHNGL127WX"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DHNGL127WX');
+          `}
+        </Script>
+      </head>
       <body
         className={`antialiased`}
       >

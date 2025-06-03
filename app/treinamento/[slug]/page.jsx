@@ -5,7 +5,7 @@ import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 
 export default async function CursoPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const treinamento = await sanity.fetch(
     `*[_type == "treinamento" && slug.current == $slug][0]{
@@ -45,7 +45,7 @@ export default async function CursoPage({ params }) {
         </div>
 
         {treinamento.descricao && (
-          <div className='flex flex-col bg-[#f0f0f0] rounded-4xl gap-4 w-full items-start justify-center p-8 my-4 lg:my-8'>
+          <div className='flex flex-col bg-[#DDDDDD] rounded-4xl gap-4 w-full items-start justify-center p-8 my-4 lg:my-8'>
             <h2 className="text-xl lg:text-3xl text-left font-bold font-aeonik">Descrição</h2>
             <p style={{ whiteSpace: 'pre-wrap' }}>{treinamento.descricao}</p>
           </div>
@@ -70,7 +70,7 @@ export default async function CursoPage({ params }) {
         )}
 
         {treinamento.conteudo && (
-          <div className='bg-[#f0f0f0] p-8 rounded-4xl my-4 lg:my-8'>
+          <div className='bg-[#DDDDDD] p-8 rounded-4xl my-4 lg:my-8'>
             <h2 className="text-xl lg:text-2xl text-left font-bold font-aeonik mb-2">Conteúdo:</h2>
             <PortableText value={treinamento.conteudo} />
           </div>
@@ -86,7 +86,7 @@ export default async function CursoPage({ params }) {
                 const mes = data.toLocaleDateString('pt-BR', { month: 'short' }).toUpperCase();
 
                 return (
-                  <div key={index} className="flex flex-col lg:flex-row bg-[#f0f0f0] rounded-4xl gap-4 w-full items-center justify-between p-8 lg:p-12 group hover:bg-purple-light hover:scale-[102%] transition-all duration-500">
+                  <div key={index} className="flex flex-col lg:flex-row bg-[#DDDDDD] rounded-4xl gap-4 w-full items-center justify-between p-8 lg:p-12 group hover:bg-purple-light hover:scale-[102%] transition-all duration-500">
                     <div className='flex flex-col lg:flex-row gap-4 lg:gap-12'>
                       <div className="text-center">
                         <p className="text-6xl font-aeonik font-bold group-hover:text-white">{dia}</p>

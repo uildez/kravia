@@ -49,7 +49,7 @@ export const Menu = () => {
   }, [lastScrollY]);
 
   const links = [
-    { name: "Inicio", to: "#", id: 1 },
+    { name: "Inicio", to: "/", id: 1 },
     { name: "Treinamentos", to: "/#treinamentos", id: 2 },
     { name: "Sobre nós", to: "/#sobre-nos", id: 3 },
     { name: "Blog", to: "/#blog", id: 4 },
@@ -58,7 +58,7 @@ export const Menu = () => {
 
   return (
     <div className={`fixed w-full z-30`}>
-      <div className={`flex fixed top-0 flex-row w-full items-center justify-between gap-8 py-8 px-8 lg:px-20 2xl:px-40 bg-gradient-to-b from-white to-white/0 z-50 ${showHeader ? 'translate-y-0' : '-translate-y-40'} transition-transform duration-500`}>
+      <div className={`flex fixed top-0 flex-row w-full items-center justify-between gap-8 py-8 px-8 lg:px-20 2xl:px-40 min-h-[80px] lg:min-h-[100px] gradient-bg-white z-50 ${showHeader ? 'translate-y-0' : '-translate-y-40'} transition-transform duration-500`}>
         <Link href={"/"}>
           <Image src={"/images/logo-kravia.svg"} className='max-w-[120px] lg:min-w-[150px]' width={500} height={500} alt='Logotipo Kravia' />
         </Link>
@@ -75,7 +75,7 @@ export const Menu = () => {
             </motion.a>
           ))}
         </div>
-        <Image onClick={cycleOpen} className='block lg:hidden cursor-pointer hover:scale-105 bg-purple-light' src={"/images/menu-icon.webp"} width={50} height={50} alt='Ícone menu mobile' />
+        <Image onClick={cycleOpen} className='block lg:hidden cursor-pointer hover:scale-105 max-w-[30px]' src={"/images/menu-icon.svg"} width={50} height={50} alt='Ícone menu mobile' />
       </div>
       <AnimatePresence>
         {open && (
