@@ -2,7 +2,7 @@ import React from 'react'
 
 export const AboutUs = () => {
   return (
-    <div id='sobre-nos' className="flex flex-col-reverse lg:flex-row bg-[#DDDDDD] w-full items-start justify-center my-4">
+    <div id='sobre-nos' className="flex flex-col-reverse lg:flex-row bg-[#DDDDDD] w-full items-stretch justify-center my-4">
       <div className="flex flex-col justify-center h-auto gap-8 px-6 lg:pl-20 2xl:pl-40 lg:pr-32 py-12 lg:py-20 w-full lg:w-1/2">
         <span className="gradient-text uppercase text-xl font-grotesk tracking-[3px]">
           Sobre Nós
@@ -27,7 +27,7 @@ export const AboutUs = () => {
           muted
           loop
           playsInline
-          className="absolute top-0 left-0 w-[100%] min-h-[100%] object-cover"
+          className="absolute top-0 left-0 w-[100%] min-h-[350px] lg:min-h-[100vh] 2xl:min-h-[70vh] object-cover"
         >
           <source src="/video-sobre-min.mp4" type="video/mp4" />
           <track
