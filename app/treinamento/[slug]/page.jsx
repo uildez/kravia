@@ -99,7 +99,7 @@ export default async function CursoPage({ params }) {
                       </div>
                     </div>
                     <Link
-                      href={`https://wa.me/5583987830715?text=${encodeURIComponent(`Olá, tenho interesse no treinamento ${treinamento.title}`)}`}
+                      href={`https://wa.me/1154201220?text=${encodeURIComponent(`Olá, tenho interesse no treinamento ${treinamento.title}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`z-2 relative group-hover:scale-100 hover:scale-105 min-h-[50px] group text-white font-bold group-hover:bg-white group-hover:text-purple-light bg-purple-light rounded-lg px-12 py-4 w-full lg:w-[20%] font-grotesk overflow-hidden transition-transform ease-in-out duration-500`}

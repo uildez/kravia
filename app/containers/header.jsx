@@ -7,7 +7,7 @@ export const Header = () => {
       <h1 className='z-2 w-full lg:w-[50%] 2xl:w-[30%] text-3xl lg:text-5xl font-aeonik font-bold mt-40 lg:mt-0'>Treinamentos <br className='block lg:hidden'/>que moldam os profissionais <span className='gradient-text'>mais requisitados do mercado.</span></h1>
       <p className='z-2 w-full lg:w-[50%] 2xl:w-1/4'>Na KRAVIA, você aprende com quem forma os líderes da infraestrutura digital: treinamentos oficiais e conteúdo exclusivo em redes, cibersegurança e cloud — com a autoridade de quem entrega os cursos mais completos do Brasil.</p>
       <Link
-        href="mailto:contato@kravia.com.br"
+        href="https://wa.link/smaxvr"
         className={`z-2 relative hover:scale-105 min-h-[50px] group text-white font-bold bg-purple-light rounded-lg px-12 py-4 w-full lg:w-[20%] font-grotesk overflow-hidden transition-transform ease-in-out duration-500`}
       >
         <span
