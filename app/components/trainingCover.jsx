@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { getCompanies, getCoursesByCompany } from '../../sanity/api'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 export const TrainingCover = () => {
   const [step, setStep] = useState('intro')
@@ -15,7 +16,10 @@ export const TrainingCover = () => {
 
   useEffect(() => {
     if (step === 'companies') {
-      getCompanies().then(setCompanies)
+      setLoading(true)
+      getCompanies()
+        .then(setCompanies)
+        .finally(() => setLoading(false)) // <--- aqui
     }
   }, [step])
 
@@ -51,16 +55,29 @@ export const TrainingCover = () => {
     return (
       <div className="flex flex-col items-center gap-6">
         <h2 className="text-3xl lg:text-5xl font-bold font-aeonik text-center">Escolha seu treinamento</h2>
-        <div className="flex flex-wrap justify-center gap-6 mt-4">
-          {companies.map((company) => (
-            <button
-              key={company._id}
-              onClick={() => handleSelectCompany(company)}
-              className="bg-[#DDDDDD] min-w-full lg:min-w-[300px] font-aeonik py-8 lg:px-10 lg:py-20 text-3xl lg:text-5xl font-bold text-[#333333] rounded-full hover:bg-[#b5b5b5] hover:scale-105 transition-all duration-500 cursor-pointer"
-            >
-              {company.nome}
-            </button>
-          ))}
+        <div className="flex flex-wrap w-full items-center justify-center gap-6 mt-4">
+          {loading === true ?
+            <div className='w-full'>
+              <button
+                className="flex items-center justify-center gap-4 bg-[#DDDDDD] min-w-full font-aeonik py-8 lg:px-10 lg:py-20 text-2xl lg:text-4xl font-bold text-[#333333] rounded-full hover:bg-[#b5b5b5] hover:scale-105 transition-all duration-500 cursor-pointer"
+              >
+                Carregando
+                <Image src="/images/loading.svg" alt='Spin Icon' width={50} height={50} className='animate-spin' />
+              </button>
+            </div>
+            :
+            (
+              companies.map((company) => (
+                <button
+                  key={company._id}
+                  onClick={() => handleSelectCompany(company)}
+                  className="bg-[#DDDDDD] min-w-full lg:min-w-[300px] font-aeonik py-8 lg:px-10 lg:py-20 text-3xl lg:text-5xl font-bold text-[#333333] rounded-full hover:bg-[#b5b5b5] hover:scale-105 transition-all duration-500 cursor-pointer"
+                >
+                  {company.nome}
+                </button>
+              ))
+            )
+          }
         </div>
         <button
           onClick={() => setStep('intro')}
@@ -77,20 +94,20 @@ export const TrainingCover = () => {
       <div className="flex flex-col items-center gap-6 w-full">
         <h2 className="text-3xl lg:text-5xl font-bold font-aeonik text-center">{selectedCompany?.nome}</h2>
         <div className="w-full max-w-3xl">
-          {courses.length > 0 ? 
-          courses.map((course) => (
-            <div key={course._id} className="flex justify-between items-center border-b py-4">
-              <span className="font-semibold text-[#333] text-lg lg:text-3xl font-aeonik max-w-[50%] lg:max-w-auto">{course.title}</span>
-              <button
-                onClick={() => router.push(`/treinamento/${course.slug.current}`)}
-                className="flex items-center text-right lg:text-center justify-center font-aeonik gap-2 text-sm font-medium tracking-[3px] text-[#333]/80 hover:text-[#333] hover:scale-105 transition-all duration-500 cursor-pointer"
-              >
-                PRÓXIMAS<br className='block lg:hidden'/> TURMAS
-                <span className="flex items-center justify-center pl-1 pt-[3px] lg:pt-1 text-2xl pb-2 bg-[#333]/50 text-white min-h-[30px] min-w-[30px] max-h-[30px] max-w-[30px] rounded-full">▶</span>
-              </button>
-            </div>
-          )) : <h3 className="text-2xl lg:text-3xl font-bold font-aeonik text-center">Nenhum treinamento encontrado</h3>
-        }
+          {courses.length > 0 ?
+            courses.map((course) => (
+              <div key={course._id} className="flex justify-between items-center border-b py-4">
+                <span className="font-semibold text-[#333] text-lg lg:text-3xl font-aeonik max-w-[50%] lg:max-w-auto">{course.title}</span>
+                <button
+                  onClick={() => router.push(`/treinamento/${course.slug.current}`)}
+                  className="flex items-center text-right lg:text-center justify-center font-aeonik gap-2 text-sm font-medium tracking-[3px] text-[#333]/80 hover:text-[#333] hover:scale-105 transition-all duration-500 cursor-pointer"
+                >
+                  PRÓXIMAS<br className='block lg:hidden' /> TURMAS
+                  <span className="flex items-center justify-center pl-1 pt-[3px] lg:pt-1 text-2xl pb-2 bg-[#333]/50 text-white min-h-[30px] min-w-[30px] max-h-[30px] max-w-[30px] rounded-full">▶</span>
+                </button>
+              </div>
+            )) : <h3 className="text-2xl lg:text-3xl font-bold font-aeonik text-center">Nenhum treinamento encontrado</h3>
+          }
         </div>
         <button
           onClick={() => setStep('companies')}

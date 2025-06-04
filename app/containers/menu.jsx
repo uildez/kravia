@@ -49,7 +49,7 @@ export const Menu = () => {
   }, [lastScrollY]);
 
   const links = [
-    { name: "Inicio", to: "/", id: 1 },
+    { name: "Início", to: "/", id: 1 },
     { name: "Treinamentos", to: "/#treinamentos", id: 2 },
     { name: "Sobre nós", to: "/#sobre-nos", id: 3 },
     { name: "Blog", to: "/#blog", id: 4 },
@@ -75,7 +75,7 @@ export const Menu = () => {
             </motion.a>
           ))}
         </div>
-        <Image onClick={cycleOpen} className='block lg:hidden cursor-pointer hover:scale-105 max-w-[30px]' src={"/images/menu-icon.svg"} width={50} height={50} alt='Ícone menu mobile' />
+        <Image onClick={cycleOpen} className='block lg:hidden cursor-pointer hover:scale-105 max-w-[30px]' src={"/images/menu-icon-lines.svg"} width={50} height={50} alt='Ícone menu mobile' />
       </div>
       <AnimatePresence>
         {open && (
@@ -83,7 +83,7 @@ export const Menu = () => {
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             exit={{ width: 0, transition: { delay: 0.7, duration: 0.3 } }}
-            className='fixed top-0 right-0 h-full bg-purple-light/90 backdrop-blur-3xl z-[99]'
+            className='fixed top-0 right-0 h-full bg-purple-light/80 blur-bg z-[99]'
           >
             <Image onClick={cycleOpen} className='absolute text-black right-8 lg:right-40 top-8 max-w-[30px]' src={"/images/close-icon.webp"} width={50} height={50} alt='Ícone menu mobile' />
 

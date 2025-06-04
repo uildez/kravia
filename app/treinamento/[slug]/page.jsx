@@ -45,32 +45,32 @@ export default async function CursoPage({ params }) {
         </div>
 
         {treinamento.descricao && (
-          <div className='flex flex-col bg-[#DDDDDD] rounded-4xl gap-4 w-full items-start justify-center p-8 my-4 lg:my-8'>
+          <div className='flex flex-col bg-[#DDDDDD] rounded-4xl gap-4 w-full items-start justify-center p-4 lg:p-8 my-4 lg:my-8'>
             <h2 className="text-xl lg:text-3xl text-left font-bold font-aeonik">Descrição</h2>
             <p style={{ whiteSpace: 'pre-wrap' }}>{treinamento.descricao}</p>
           </div>
         )}
         <div className='flex flex-col lg:flex-row gap-4 lg:gap-8 my-4 lg:my-8'>
-          {treinamento.versao && <p className='w-full lg:w-2/4 bg-white border-3 border-purple-medium p-8 rounded-2xl'><strong className='font-aeonik'>Versão:</strong> {treinamento.versao}</p>}
-          {treinamento.linguagem && <p className='w-full lg:w-2/4 bg-white border-3 border-purple-medium p-8 rounded-2xl'><strong className='font-aeonik'>Linguagem:</strong> {treinamento.linguagem}</p>}
+          {treinamento.versao && <p className='w-full lg:w-2/4 bg-white border-3 border-purple-medium p-4 lg:p-8 rounded-2xl'><strong className='font-aeonik'>Versão:</strong> {treinamento.versao}</p>}
+          {treinamento.linguagem && <p className='w-full lg:w-2/4 bg-white border-3 border-purple-medium p-4 lg:p-8 rounded-2xl'><strong className='font-aeonik'>Linguagem:</strong> {treinamento.linguagem}</p>}
         </div>
 
         {treinamento.preRequisitos && (
-          <div className='my-4 lg:my-8'>
+          <div className='my-4 lg:my-8 p-4 lg:p-0'>
             <h2 className="text-xl lg:text-2xl text-left font-bold font-aeonik mb-2 text-purple-medium">Pré-requisitos:</h2>
             <PortableText value={treinamento.preRequisitos} />
           </div>
         )}
 
         {treinamento.indicadoPara && (
-          <div className='my-4 lg:my-8'>
+          <div className='my-4 lg:my-8 p-4 lg:p-0'>
             <h2 className="text-xl lg:text-2xl text-left font-bold font-aeonik mb-2 text-purple-medium">Indicado para:</h2>
             <PortableText value={treinamento.indicadoPara} />
           </div>
         )}
 
         {treinamento.conteudo && (
-          <div className='bg-[#DDDDDD] p-8 rounded-4xl my-4 lg:my-8'>
+          <div className='bg-[#DDDDDD] p-4 lg:p-8 rounded-4xl my-4 lg:my-8'>
             <h2 className="text-xl lg:text-2xl text-left font-bold font-aeonik mb-2">Conteúdo:</h2>
             <PortableText value={treinamento.conteudo} />
           </div>
@@ -92,10 +92,10 @@ export default async function CursoPage({ params }) {
                         <p className="text-6xl font-aeonik font-bold group-hover:text-white">{dia}</p>
                         <p className="text-3xl font-aeonik uppercase group-hover:text-white">{mes}</p>
                       </div>
-                      <div className="flex flex-col gap-1 pl-4">
+                      <div className="flex flex-col items-center justify-center gap-1 pl-4">
                         <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Localização:</strong> {item.localizacao}</p>
-                        <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Carga horária:</strong> {item.cargaHoraria}</p>
-                        <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Investimento:</strong> R${item.investimento}</p>
+                        {item.cargaHoraria && <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Carga horária:</strong> {item.cargaHoraria}</p>}
+                        {item.investimento && <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Investimento:</strong> R${item.investimento}</p>}
                       </div>
                     </div>
                     <Link
