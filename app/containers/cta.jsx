@@ -6,7 +6,7 @@ export const Cta = () => {
     <div className='flex flex-col items-center gap-12 px-8 lg:px-40 my-20'>
       <h2 className="w-full lg:w-3/4 text-3xl lg:text-5xl font-aeonik font-bold text-center">Capacite sua equipe com o maior instrutor da América Latina</h2>
       <Link
-        href="https://wa.link/smaxvr"
+        href="tel:(11) 5420-1220"
         className={`relative hover:scale-105 min-h-[50px] group text-white font-bold bg-purple-light rounded-lg px-12 py-4 w-full lg:w-[25%] font-grotesk overflow-hidden transition-transform ease-in-out duration-500`}
       >
         <span
