@@ -12,7 +12,7 @@ export const Footer = () => {
       </div>
       <div className='flex flex-row items-center justify-center gap-4'>
         <a  target="_blank" rel="noopener noreferrer" href='https://www.youtube.com/@TshootAcademy'><Image src={"/images/youtube.svg"} className='max-w-[35px] lg:max-w-[35px] hover:-translate-y-2 transition-all duration-500 opacity-60' width={500} height={500} alt='Ícone Youtube' /></a>
-        <a  target="_blank" rel="noopener noreferrer" href='https://www.youtube.com/@TshootAcademy'><Image src={"/images/instagram.svg"} className='max-w-[35px] lg:max-w-[35px] hover:-translate-y-2 transition-all duration-500' width={500} height={500} alt='Ícone Instagram' /></a>
+        <a  target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/TshootAcademy'><Image src={"/images/instagram.svg"} className='max-w-[35px] lg:max-w-[35px] hover:-translate-y-2 transition-all duration-500' width={500} height={500} alt='Ícone Instagram' /></a>
         <a  target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/company/kravia-treinamentos/'><Image src={"/images/linkedin.svg"} className='max-w-[35px] lg:max-w-[35px] hover:-translate-y-2 transition-all duration-500' width={500} height={500} alt='Ícone Linkedin' /></a>
         <a  target="_blank" rel="noopener noreferrer" href='https://wa.link/smaxvr'><Image src={"/images/whatsapp.svg"} className='max-w-[35px] lg:max-w-[35px] hover:-translate-y-2 transition-all duration-500 opacity-60' width={500} height={500} alt='Ícone WhatsApp' /></a>
       </div>
