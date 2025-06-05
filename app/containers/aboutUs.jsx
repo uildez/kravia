@@ -17,7 +17,7 @@ export const AboutUs = () => {
       </div>
 
       <div
-        className="relative w-full lg:w-1/2 h-full min-h-[350px] lg:min-h-[100vh] 2xl:min-h-[70vh] overflow-hidden"
+        className="relative w-full lg:w-1/2 h-full min-h-[350px] md:h-[85vh] lg:min-h-[50vh] overflow-hidden"
       >
         <video
           width="320"
@@ -27,7 +27,7 @@ export const AboutUs = () => {
           muted
           loop
           playsInline
-          className="absolute top-0 left-0 w-[100%] min-h-[350px] lg:min-h-[100vh] 2xl:min-h-[70vh] object-cover"
+          className="absolute top-0 left-0 w-[100%] min-h-[350px] md:h-[85vh] lg:min-h-[50vh] object-cover"
         >
           <source src="/video-sobre-min.mp4" type="video/mp4" />
           <track
