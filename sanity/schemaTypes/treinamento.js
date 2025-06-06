@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
   name: 'treinamento',
   type: 'document',
@@ -7,6 +8,22 @@ export default {
     { name: 'slug', type: 'slug', title: 'Slug', options: { source: 'title' } },
     { name: 'descricao', type: 'text', title: 'Descrição' },
     { name: 'empresa', type: 'reference', to: [{ type: 'empresa' }] },
+    {
+      name: 'selo',
+      type: 'image',
+      title: 'Selo do Treinamento',
+      options: {
+        hotspot: true
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Texto alternativo',
+          description: 'Importante para SEO e acessibilidade'
+        }
+      ]
+    },
     {
       name: 'imagem',
       type: 'image',

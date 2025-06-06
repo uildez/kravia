@@ -12,6 +12,7 @@ export default async function CursoPage({ params }) {
       ...,
       empresa->,
       imagem,
+      selo,
       versao,
       linguagem,
       preRequisitos,
@@ -39,9 +40,18 @@ export default async function CursoPage({ params }) {
       }
 
       <div className="flex flex-col w-full mt-12 px-8 lg:px-20 2xl:px-40 min-h-[60vh] space-y-6">
-        <div className="text-center space-y-2">
+        <div className="flex items-center justify-between w-full text-center space-y-2">
           {/* <p className="text-xl font-semibold gradient-text uppercase">Empresa: {treinamento.empresa?.nome}</p> */}
           <h1 className="text-3xl lg:text-5xl text-left font-bold font-aeonik">{treinamento.title}</h1>
+          {treinamento.selo && (
+            <Image
+              src={urlFor(treinamento.selo).width(500).url()}
+              width={500}
+              height={500}
+              className="max-w-[100px] lg:max-w-[200px] object-cover"
+              alt={treinamento.selo?.alt || `Selo do Treinamento ${treinamento.title}`}
+            />
+          )}
         </div>
 
         {treinamento.descricao && (
