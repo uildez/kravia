@@ -3,6 +3,7 @@ import { sanity } from '../../../sanity/api';
 import { urlFor } from '../../../sanity/image';
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
+import ContactForm from '../../components/contactForm';
 
 export default async function CursoPage({ params }) {
   const { slug } = await params;
@@ -86,7 +87,7 @@ export default async function CursoPage({ params }) {
           </div>
         )}
 
-        {treinamento.calendario?.length > 0 && (
+        {treinamento.calendario?.length > 0 ? (
           <div className="mt-8">
             <h2 className="text-3xl lg:text-5xl text-left font-bold font-aeonik">Próximas Datas</h2>
             <div className="space-y-4 mt-4">
@@ -102,8 +103,8 @@ export default async function CursoPage({ params }) {
                         <p className="text-6xl font-aeonik font-bold group-hover:text-white">{dia}</p>
                         <p className="text-3xl font-aeonik uppercase group-hover:text-white">{mes}</p>
                       </div>
-                      <div className="flex flex-col items-center justify-center gap-1 pl-4">
-                        <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Localização:</strong> {item.localizacao}</p>
+                      <div className="flex flex-col items-center lg:items-start justify-center gap-1 pl-4">
+                        {item.localizacao && <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Localização:</strong> {item.localizacao}</p>}
                         {item.cargaHoraria && <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Carga horária:</strong> {item.cargaHoraria}</p>}
                         {item.investimento && <p className='group-hover:text-white'><strong className='font-aeonik text-lg'>Investimento:</strong> R${item.investimento}</p>}
                       </div>
@@ -130,8 +131,18 @@ export default async function CursoPage({ params }) {
                 )
               })}
             </div>
+          </div>)
+          :
+          <div className='flex flex-col w-full lg:flex-row items-center justify-between gap-8 lg:gap-20 mt-8'>
+            <div className='flex flex-col w-full lg:w-2/5 gap-4 lg:gap-8'>
+              <h2 className="text-3xl lg:text-5xl text-left font-bold font-aeonik">Entre na lista de espera</h2>
+              <p style={{ whiteSpace: 'pre-wrap' }}>Preencha o formulário e entraremos em contato assim que o treinamento de {treinamento.title} estiver disponível.</p>
+            </div>
+            <div className='w-full lg:w-3/6'>
+              <ContactForm />
+            </div>
           </div>
-        )}
+        }
       </div>
     </div>
   );
