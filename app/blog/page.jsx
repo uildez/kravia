@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { sanity } from '../../sanity/api';
 import { urlFor } from '../../sanity/image';
-import RecentPostsWithSearch from '@/app/components/recentPostsWithSearch';
+import RecentPostsWithSearch from '../components/recentPostsWithSearch';
 
 const POSTS_PER_PAGE = 12;
 

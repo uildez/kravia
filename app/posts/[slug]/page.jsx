@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { sanity } from '../../../sanity/api'
 import { urlFor } from '../../../sanity/image'
-import RecentPostsWithSearch from '@/app/components/recentPostsWithSearch';
+import RecentPostsWithSearch from '../components/recentPostsWithSearch';
 
 export async function generateMetadata({ params }) {
   const { slug } = params
