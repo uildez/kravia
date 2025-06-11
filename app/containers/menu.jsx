@@ -85,7 +85,7 @@ export const Menu = () => {
             exit={{ width: 0, transition: { delay: 0.7, duration: 0.3 } }}
             className='fixed top-0 right-0 h-full bg-purple-light/80 blur-bg z-[99]'
           >
-            <Image onClick={cycleOpen} className='absolute text-black right-8 lg:right-40 top-8 max-w-[30px]' src={"/images/close-icon.webp"} width={50} height={50} alt='Ícone menu mobile' />
+            <Image onClick={cycleOpen} className='absolute text-black right-4 lg:right-40 top-4 min-w-[60px] max-w-[60px] p-4' src={"/images/close-icon.webp"} width={50} height={50} alt='Ícone menu mobile' />
 
             <motion.div
               className="flex flex-col items-center gap-12 justify-center h-full"
